@@ -1,0 +1,7 @@
+package org.zerock.board.service.impl;
+
+import org.rosuda.JRI.Rengine;
+
+public class rJavaEngine {
+	
+}

@@ -1,0 +1,68 @@
+package org.zerock.board.service.impl;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+ 
+import org.zerock.board.service.BoardVO;
+
+import com.mysql.cj.Session;
+ 
+@Service("boardServiceImpl")
+public class BoardServiceImpl implements BoardService{
+    
+    @Autowired
+    private BoardDAO boardDAOService;
+    
+    @Override
+    public List<BoardVO> selectBoardList(BoardVO boardVO) throws Exception {
+        List<BoardVO> list = null;
+        list = boardDAOService.selectBoardList(boardVO);
+        return list;
+    }
+ 
+    @Override
+    public void insertBoard(BoardVO boardVO) throws Exception {
+        boardDAOService.insertBoard(boardVO);
+    }
+ 
+    @Override
+    public void updateBoard(BoardVO boardVO) throws Exception {
+        boardDAOService.updateBoard(boardVO);
+    }
+ 
+    @Override
+    public void deleteBoard(BoardVO boardVO) throws Exception {
+        boardDAOService.deleteBoard(boardVO);
+    }
+ 
+    @Override
+    public BoardVO selectBoardByCode(BoardVO boardVO) throws Exception {
+        
+        BoardVO resultVO = boardDAOService.selectBoardByCode(boardVO);
+        
+        return resultVO; 
+    }
+    
+    @Override
+    public int selectBoardListCnt(BoardVO boardVO) throws Exception {
+    	
+    	return 0;
+    }
+    
+    @Override
+    public List<BoardVO> listPage(int page) throws Exception {
+    	
+    	List<BoardVO> list = null;
+        list = boardDAOService.selectBoardList(boardVO);
+    	if(page <= 0) {
+    		page = 1;
+    	}
+    	
+    	page = (page - 1) * 10;
+    	return ;
+    }
+    
+
+}

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>LDAvis</title>
+    <script src="vendor/bootstrap/js/5.d3.v3.js"></script>
+    <script src="vendor/bootstrap/js/5.ldavis.js"></script>
+    <link rel="stylesheet" href="vendor/bootstrap/css/lda.css" >
+  </head>
+
+  <body>
+    <div id = "lda"></div>
+    <script>
+      var vis = new LDAvis("#lda", "vendor/bootstrap/js/5.lda.json");
+    </script>
+    
+    <img src = "analysisimg/5month.jpg" height=838 width=100/>
+  </body>
+
+</html>
